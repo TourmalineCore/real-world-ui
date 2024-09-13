@@ -22,7 +22,7 @@ import './commands'
 import { mount } from 'cypress/react18'
 
 window.__ENV__ = {
-  VITE_API_ROOT: `http://test.com/to-dos-api`,
+  API_ROOT: `http://test.com/to-dos-api`,
 }
 
 // Augment the Cypress namespace to include type definitions for
@@ -39,7 +39,7 @@ declare global {
   // this makes TS errors go away https://stackoverflow.com/a/56458070
   interface Window {
     __ENV__: {
-      VITE_API_ROOT: string,
+      API_ROOT: string,
     },
   }
 }
