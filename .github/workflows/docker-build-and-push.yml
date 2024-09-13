@@ -3,7 +3,7 @@ name: Publish Docker image
 on:
   push:
     branches:
-      - feature/add-service-template
+      - feature/actual-version-of-ui
 
 jobs:
   push_to_registry:
