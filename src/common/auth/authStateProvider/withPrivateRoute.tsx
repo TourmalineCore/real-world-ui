@@ -23,6 +23,7 @@ export const withPrivateRoute = <Type extends Record<string, unknown>>(ComposedC
     useEffect(() => {
       if (!isAuthenticated) {
         navigation(redirectAuth(location.pathname))
+        window.location.reload()
       }
     }, [
       isAuthenticated,
