@@ -5,6 +5,11 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { HomePage } from './pages/home/HomePage.tsx'
 import { ToDosPage } from './pages/to-dos/ToDosPage.tsx'
+import { withPrivateRoute } from './common/auth/authStateProvider/withPrivateRoute.tsx'
+
+const ToDosWithPrivateRoute = withPrivateRoute(ToDosPage)
+
+const HomeWithPrivateRoute = withPrivateRoute(HomePage)
 
 ReactDOM
   .createRoot(document.getElementById(`root`)!)
@@ -14,11 +19,11 @@ ReactDOM
         <Routes>
           <Route
             path="/to-dos"
-            element={<ToDosPage />}
+            element={<ToDosWithPrivateRoute />}
           />
           <Route
             path="/*"
-            element={<HomePage />}
+            element={<HomeWithPrivateRoute />}
           />
         </Routes>
       </BrowserRouter>
