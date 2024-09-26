@@ -1,10 +1,8 @@
 FROM node:20.11.1-alpine3.19 as build
-ENV PATH /node_modules/.bin:$PATH
-COPY package.json ./
-COPY package-lock.json ./
-# COPY .npmrc ./
+COPY package.json .
+COPY package-lock.json .
 RUN npm ci
-COPY . ./
+COPY . .
 RUN npm run build
 
 
