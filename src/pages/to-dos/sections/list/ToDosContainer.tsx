@@ -19,7 +19,7 @@ export const ToDosContainer = observer(({
         data: {
           toDos,
         },
-      } = await api.get<ToDosResponse>(`/to-dos`)
+      } = await api.get<ToDosResponse>(`/to-dos-api/to-dos`)
 
       toDosState.initialize({
         toDos,
