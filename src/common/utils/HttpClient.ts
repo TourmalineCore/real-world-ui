@@ -6,10 +6,6 @@ import { auth } from '../auth/auth.helper'
 
 export const api = axios.create({
   baseURL: API_ROOT,
-
-  headers: {
-    'Content-Type': `application/json`,
-  },
 })
 
 addInterceptorsToAnApi({
