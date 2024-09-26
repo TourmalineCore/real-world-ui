@@ -1,12 +1,12 @@
-// @ts-ignore
 /* eslint-disable @typescript-eslint/quotes */
+// eslint-disable-next-line no-undef
 const env = process.argv[2]
 
-const fs = require("fs")
+import { readFileSync, writeFileSync } from "fs"
 
 const filepath = "./public/env-config.js"
 const fileCypressPath = "./cypress/env-config.js"
-const data = fs.readFileSync(`./.config-${env}`)
+const data = readFileSync(`./.config-${env}`)
 
 const variables = data.toString()
   .split("\n")
@@ -17,5 +17,5 @@ const variables = data.toString()
   })
   .reduce((res, x) => res.concat(x), "")
 
-fs.writeFileSync(filepath, `window.__ENV__ = { ${variables} }`)
-fs.writeFileSync(fileCypressPath, `window.__ENV__ = { ${variables} }`)
+writeFileSync(filepath, `window.__ENV__ = { ${variables} }`)
+writeFileSync(fileCypressPath, `window.__ENV__ = { ${variables} }`)
