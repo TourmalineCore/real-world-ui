@@ -57,7 +57,8 @@ networkPolicy:
 
 # CUSTOM: Here you store non secret env vars that will be passed to the pod's environment
 extraConfigMapEnvVars:
-  API_ROOT: "https://real-world.tourmalinecore.com/api"
+  API_ROOT: http://real-world.local.tourmalinecore.internal/to-dos-api
+
 
 # this is needed to tell the container to read extra env vars from the dedicated Config Map that we create in extraDeploy
 extraEnvVarsCM: "{{ include \"common.names.fullname\" . }}"
