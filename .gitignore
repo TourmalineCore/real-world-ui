@@ -23,5 +23,6 @@ dist-ssr
 
 # to be able to commit it instead of writing instructions in README
 !.env.local
+**/*/env-config.js
 
 cypress/downloads

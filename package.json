@@ -4,7 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite --host",
+    "start": "run-s create-config:prod vite-start",
+    "start:local": "run-s create-config:local vite-start",
+    "vite-start": "vite --port 5501",
+    "create-config:prod": "node local-config-builder prod",
+    "create-config:local": "node local-config-builder local",
     "build": "tsc && vite build",
     "lint": "run-s lint-ts lint-eslint",
     "lint-eslint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
